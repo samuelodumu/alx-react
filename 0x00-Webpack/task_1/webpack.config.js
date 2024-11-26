@@ -11,7 +11,6 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Holberton Dashboard',
-            template: 'index.html'
         })
     ],
 };
