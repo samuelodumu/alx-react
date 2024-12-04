@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { SplitChunksPlugin } = require('webpack');
 
 module.exports = {
   mode: 'development', // set mode option, 'development' or 'production'
@@ -13,6 +14,11 @@ module.exports = {
     path: path.resolve(__dirname, 'public'), // output path
     filename: '[name].bundle.js' // output filename
   },
+  optimization: {
+    SplitChunks: {
+      chunks: 'all', // split all chunks
+    },
+  },
   'devtool': 'inline-source-map', // enable source mapping
   devServer: {
     static: {
@@ -22,7 +28,7 @@ module.exports = {
     port: 8564, // port number
     open: true, // open browser
     hot: true, // hot module replacement
-    compress: true // enable gzip compression
+    compress: true, // enable gzip compression
   },
 
   module: {
