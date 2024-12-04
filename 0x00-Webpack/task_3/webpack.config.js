@@ -18,6 +18,7 @@ module.exports = {
     static: {
       directory: path.resolve(__dirname, 'public') // static files
     },
+    contentBase: path.join(__dirname, 'public'), // base directory
     port: 8564, // port number
     open: true, // open browser
     hot: true, // hot module replacement
@@ -37,7 +38,7 @@ module.exports = {
       }
     ]
   },
-  
+
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Holberton Dashboard' // title of the html page
