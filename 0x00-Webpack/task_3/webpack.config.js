@@ -13,6 +13,7 @@ module.exports = {
     path: path.resolve(__dirname, 'public'), // output path
     filename: '[name].bundle.js' // output filename
   },
+  'devtool': 'inline-source-map', // enable source mapping
   devServer: {
     static: {
       directory: path.resolve(__dirname, 'public') // static files
@@ -36,6 +37,7 @@ module.exports = {
       }
     ]
   },
+  
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Holberton Dashboard' // title of the html page
