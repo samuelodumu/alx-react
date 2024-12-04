@@ -15,16 +15,13 @@ module.exports = {
     filename: '[name].bundle.js' // output filename
   },
   optimization: {
-    SplitChunks: {
+    splitChunks: {
       chunks: 'all', // split all chunks
     },
   },
   'devtool': 'inline-source-map', // enable source mapping
   devServer: {
-    static: {
-      directory: path.resolve(__dirname, 'public') // static files
-    },
-    contentBase: './public', // base directory
+    static: path.resolve(__dirname, 'public'), // static files
     port: 8564, // port number
     open: true, // open browser
     hot: true, // hot module replacement
