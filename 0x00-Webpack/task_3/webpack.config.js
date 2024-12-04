@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { plugins } = require('../demo/webpack.config');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development', // set mode option, 'development' or 'production'
@@ -18,7 +18,7 @@ module.exports = {
     static: {
       directory: path.resolve(__dirname, 'public') // static files
     },
-    contentBase: path.join(__dirname, 'public'), // base directory
+    contentBase: './public', // base directory
     port: 8564, // port number
     open: true, // open browser
     hot: true, // hot module replacement
@@ -42,6 +42,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Holberton Dashboard' // title of the html page
-    })
+    }),
+    new CleanWebpackPlugin() // clean up the output.path directory
   ]
 };
