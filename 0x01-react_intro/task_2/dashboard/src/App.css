@@ -23,11 +23,19 @@
 
 .App-body {
   height: 60%;
+  padding: 2rem;
 }
 .App-body p {
   font-size: 1.5rem;
-  padding: 2rem;
 }
+
+.App-body label {
+  padding-right: .3rem;
+}
+
+.App-body input {
+  margin-right: .6rem;
+  }
 
 .App-footer {
   display: flex;
